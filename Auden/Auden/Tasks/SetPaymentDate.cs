@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Threading;
 using OpenQA.Selenium;
 
 namespace Auden.Tasks
@@ -16,13 +16,11 @@ namespace Auden.Tasks
 
         }
 
-        public static SetPaymentDate To(int day)
-        {
-            return new SetPaymentDate(day);
-        }
+        public static SetPaymentDate To(int day) => new SetPaymentDate(day);
 
         public static SetPaymentDate ToWeekendDay()
         {
+            Thread.Sleep(2000);
             var startDate = DateTime.Now;
             var first = new DateTime(startDate.Year, startDate.Month, 1);
             List<int> weekends = new List<int>();
@@ -40,9 +38,6 @@ namespace Auden.Tasks
             return new SetPaymentDate(weekends[4]);
         }
 
-        public SetPaymentDate(int day)
-        {
-            this.day = day;
-        }
+        public SetPaymentDate(int day) => this.day = day;
     }
 }

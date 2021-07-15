@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using BoDi;
 using Auden.WebDriver;
 using OpenQA.Selenium;
-using NUnit.Framework;
-using Auden.Config;
 
 namespace Auden.Hooks
 {

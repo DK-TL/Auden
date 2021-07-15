@@ -1,8 +1,5 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.Interactions;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 
 namespace Auden.Tasks
@@ -40,14 +37,8 @@ namespace Auden.Tasks
 
         }
 
-        public static SetLoanAmount To(int loanAmount)
-        {
-            return new SetLoanAmount(loanAmount);
-        }
+        public static SetLoanAmount To(int loanAmount) => new SetLoanAmount(loanAmount);
 
-        public SetLoanAmount(int loanAmount)
-        {
-            this.loanAmount = loanAmount;
-        }
+        public SetLoanAmount(int loanAmount) => this.loanAmount = loanAmount;
     }
 }

@@ -1,12 +1,6 @@
-﻿using System;
-using TechTalk.SpecFlow;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using Auden;
+﻿using TechTalk.SpecFlow;
 using Auden.Tasks;
 using Auden.Observations;
-using OpenQA.Selenium.Interactions;
-using System.Threading;
 
 namespace Auden.Features
 {
@@ -26,7 +20,7 @@ namespace Auden.Features
         public void GivenIAmOnTheAudenShortTermLoanPage()
         {
             user.AttemptsTo(
-                NavigateTo.URL("https://www.auden.com/short-term-loan")
+                NavigateTo.URL(Config.Environment.ShortTermLoanPage)
                 );
         }
 
@@ -75,7 +69,6 @@ namespace Auden.Features
         [When(@"I set the repayment date to a weekend date")]
         public void WhenISetTheRepaymentDateToAWeekendDate()
         {
-            Thread.Sleep(3000);
             user.AttemptsTo(SetPaymentDate.ToWeekendDay());
         }
 

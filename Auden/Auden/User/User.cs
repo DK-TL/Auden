@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Auden.Tasks;
+﻿using Auden.Tasks;
 using NUnit.Framework;
 using Auden.Observations;
 using OpenQA.Selenium;
